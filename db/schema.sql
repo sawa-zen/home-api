@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS cpu_temp (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  temp INT(4) NOT NULL,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  PRIMARY KEY (id)
+);
