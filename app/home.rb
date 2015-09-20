@@ -8,13 +8,14 @@ ActiveRecord::Base.configurations = YAML.load_file('config/database.yml')
 ActiveRecord::Base.establish_connection(:development)
 
 class Home < Sinatra::Base
-  get '/' do
+
+  get '/cpu_temp' do
     content_type :json, :charset => 'utf-8'
     cpu_temp = CpuTemp.order("id DESC").limit(10)
     cpu_temp.to_json()
   end
 
-  post '/' do
+  post '/cpu_temp' do
     # データ保存
     cpu_temp = CpuTemp.new
     cpu_temp.temp = 40
