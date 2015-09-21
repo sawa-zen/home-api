@@ -18,7 +18,7 @@ class Home < Sinatra::Base
   post '/cpu_temp' do
     # データ保存
     cpu_temp = CpuTemp.new
-    cpu_temp.temp = 40
+    cpu_temp.temp = params[:temp]
     cpu_temp.save
 
     # レスポンスコード
