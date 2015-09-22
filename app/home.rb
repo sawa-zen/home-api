@@ -15,14 +15,14 @@ class Home < Sinatra::Base
     cpu_temp.to_json()
   end
 
-  post '/cpu_temp' do
-    # データ保存
-    cpu_temp = CpuTemp.new
-    cpu_temp.temp = params[:temp]
-    cpu_temp.save
+  #post '/cpu_temp' do
+  #  # データ保存
+  #  cpu_temp = CpuTemp.new
+  #  cpu_temp.temp = params[:temp]
+  #  cpu_temp.save
 
-    # レスポンスコード
-    status 202
-  end
+  #  # レスポンスコード
+  #  status 202
+  #end
 
 end
