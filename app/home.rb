@@ -9,6 +9,10 @@ ActiveRecord::Base.establish_connection(:development)
 
 class Home < Sinatra::Base
 
+  get '/' do
+      erb :index
+  end
+
   get '/cpu_temp' do
     content_type :json, :charset => 'utf-8'
     cpu_temp = CpuTemp.order("id DESC").limit(10)
