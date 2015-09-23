@@ -7,6 +7,7 @@ ActiveRecord::Base.configurations = YAML.load_file('config/database.yml')
 ActiveRecord::Base.establish_connection(:development)
 
 class CpuTemp < ActiveRecord::Base
+  self.default_timezone = :local
   self.table_name = "cpu_temp"
 end
 
